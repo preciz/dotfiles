@@ -100,8 +100,9 @@ if ! shopt -oq posix; then
 fi
 
 # Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-gnome-terminal/base16-default.dark.sh"
+BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+
 
 # aliases
 alias ll='ls -alF'
@@ -109,8 +110,12 @@ alias la='ls -A'
 alias l='ls -CF'
 alias c="clear"
 
+alias colortest="$HOME/.config/base16-gnome-terminal/colortest"
+
 # use vim
-export EDITOR=vim; 
+export EDITOR=vim;
 
 # use vim like keybinding in terminal
 set +o vi
+
+export TERM="xterm-256color"
