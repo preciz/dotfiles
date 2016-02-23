@@ -26,11 +26,22 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 " colors
+" Force 256 colors
+set t_Co=256
+let &t_AB="\e[48;5;%dm"
+let &t_AF="\e[38;5;%dm"
+set t_ut= " improve screen clearing by using the background color
 syntax on
 let base16colorspace=256  " Access colors present in 256 colorspace
 set background=dark
 colorscheme base16-default
+set term=screen-256color
+let $TERM='screen-256color'
 let g:airline_theme='base16'
+" fix base16 matching parentheses disappearing on cursor
+highlight! link MatchParen StatusLine
+
+set enc=utf-8
 
 " always show status line
 set laststatus=2
@@ -105,5 +116,33 @@ set noshowmode
 
 set wildmode=full
 
-" fix base16 matching parentheses disappearing on cursor
-highlight! link MatchParen StatusLine
+" Show trailing whitespace and spaces before a tab:
+:highlight ExtraWhitespace ctermbg=red guibg=red
+:autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\\t/
+
+" NO ARROW KEYS COME ON
+map <Left> :echo "no!"<cr>
+map <Right> :echo "no!"<cr>
+map <Up> :echo "no!"<cr>
+map <Down> :echo "no!"<cr>
+
+" Keep the cursor in place while joining lines
+nnoremap J mzJ`z
+
+" Split line (sister to [J]oin lines above)
+" The normal use of S is covered by cc, so don't worry about shadowing it.
+nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w
+
+" Delete trailing white space on save
+func! DeleteTrailingWS()
+  exe "normal mz"
+  %s/\s\+$//ge
+  exe "normal `z"
+endfunc
+au BufWrite * silent call DeleteTrailingWS()
+
+" Makes foo-bar considered one word
+set iskeyword+=-
+
+" Start scrolling 3 lines before the border
+set scrolloff=3
