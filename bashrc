@@ -105,7 +105,6 @@ fi
 BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
-
 # aliases
 alias ll='ls -alF'
 alias la='ls -A'
@@ -113,6 +112,19 @@ alias l='ls -CF'
 alias c="clear"
 
 alias colortest="$HOME/.config/base16-gnome-terminal/colortest"
+
+export TERM="xterm-256color"
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+export NVM_DIR="/home/preciz/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+alias pd='bundle exec cap production deploy && bundle exec cap production puma:restart'
+alias sd='bundle exec cap staging deploy && bundle exec cap staging puma:restart'
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # use vim
 export EDITOR=vim;
