@@ -188,7 +188,7 @@ set nowb
 set noswapfile
 
 " Add a bit extra margin to the left
-set foldcolumn=1
+set foldcolumn=2
 
 " Don't redraw while executing macros (good performance config)
 set lazyredraw
