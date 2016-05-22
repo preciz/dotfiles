@@ -174,3 +174,6 @@ vnoremap // y/<C-R>"<CR>
 
 " match do/end in ruby
 runtime macros/matchit.vim
+" Treat long lines as break lines (useful when moving around in them)
+map j gj
+map k gk
