@@ -186,3 +186,6 @@ map k gk
 set nobackup
 set nowb
 set noswapfile
+
+" Add a bit extra margin to the left
+set foldcolumn=1
