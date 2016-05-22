@@ -36,6 +36,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/syntastic'
 Plugin 'chriskempson/base16-vim'
 Plugin 'elixir-lang/vim-elixir'
+Plugin 'eslint/eslint'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -52,14 +53,10 @@ set background=dark
 colorscheme base16-default
 set term=screen-256color
 let $TERM='screen-256color'
-let g:airline_theme='base16'
 " fix base16 matching parentheses disappearing on cursor
 highlight! link MatchParen StatusLine
 
 set enc=utf-8
-
-" always show status line
-set laststatus=2
 
 set guioptions-=r
 set guioptions-=l
@@ -67,8 +64,6 @@ set guioptions-=L
 set guioptions-=R
 
 autocmd StdinReadPre * let s:std_in=1
-" show nerdtree on vim startup
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 map <C-n> :NERDTreeToggle<CR>
 
@@ -119,6 +114,10 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_auto_loc_list = 0
+
+let g:syntastic_javascript_checkers = ['eslint']
+
 
 " Return to last edit position when opening files (You want this!)
 autocmd BufReadPost *
@@ -130,16 +129,11 @@ autocmd BufReadPost *
 set noshowmode
 
 set wildmode=full
+set wildignore+=*/tmp/*,*.so,*.swp,*/_build/*
 
 " Show trailing whitespace and spaces before a tab:
 :highlight ExtraWhitespace ctermbg=red guibg=red
 :autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\\t/
-
-" NO ARROW KEYS COME ON
-map <Left> :echo "no!"<cr>
-map <Right> :echo "no!"<cr>
-map <Up> :echo "no!"<cr>
-map <Down> :echo "no!"<cr>
 
 " Keep the cursor in place while joining lines
 nnoremap J mzJ`z
@@ -161,3 +155,25 @@ set iskeyword+=-
 
 " Start scrolling 3 lines before the border
 set scrolloff=3
+
+" Ruby is an oddball in the family, use special spacing/rules
+if v:version >= 703
+  " Note: Relative number is quite slow with Ruby, so is cursorline
+  autocmd FileType ruby setlocal ts=2 sts=2 sw=2 norelativenumber nocursorline
+else
+  autocmd FileType ruby setlocal ts=2 sts=2 sw=2
+endif
+
+" Syntax coloring lines that are too long just slows down the world
+set synmaxcol=128
+
+"speeding up vim by:
+set ttyfast " u got a fast terminal
+set ttyscroll=3
+set lazyredraw " to avoid scrolling problems
+
+"search visually selected text
+vnoremap // y/<C-R>"<CR>
+
+" match do/end in ruby
+runtime macros/matchit.vim
