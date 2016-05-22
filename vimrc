@@ -181,3 +181,8 @@ let g:ruby_path = system('rvm current')
 " Treat long lines as break lines (useful when moving around in them)
 map j gj
 map k gk
+
+" Turn backup off, since most stuff is in SVN, git et.c anyway...
+set nobackup
+set nowb
+set noswapfile
