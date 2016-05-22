@@ -174,6 +174,10 @@ vnoremap // y/<C-R>"<CR>
 
 " match do/end in ruby
 runtime macros/matchit.vim
+
+" ruby path if you are using RVM
+let g:ruby_path = system('rvm current')
+
 " Treat long lines as break lines (useful when moving around in them)
 map j gj
 map k gk
