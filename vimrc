@@ -196,6 +196,9 @@ set lazyredraw
 " Highlight search results
 set hlsearch
 
+"Enter disables highlihting
+nnoremap <CR> :noh<CR><CR>
+
 "" Vmap for maintain Visual Mode after shifting > and <
 vmap < <gv
 vmap > >gv
