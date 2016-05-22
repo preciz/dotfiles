@@ -67,9 +67,6 @@ autocmd StdinReadPre * let s:std_in=1
 
 map <C-n> :NERDTreeToggle<CR>
 
-" relative line numbers
-set rnu
-
 filetype plugin indent on
 set tabstop=2
 set shiftwidth=2
