@@ -192,6 +192,10 @@ set foldcolumn=2
 
 " Don't redraw while executing macros (good performance config)
 set lazyredraw
+
+" Highlight search results
+set hlsearch
+
 "" Vmap for maintain Visual Mode after shifting > and <
 vmap < <gv
 vmap > >gv
