@@ -192,9 +192,6 @@ set noswapfile
 " Add a bit extra margin to the left
 set foldcolumn=2
 
-" Don't redraw while executing macros (good performance config)
-set lazyredraw
-
 " Highlight search results
 set hlsearch
 
