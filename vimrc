@@ -37,6 +37,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'chriskempson/base16-vim'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'eslint/eslint'
+Plugin 'sheerun/vim-polyglot'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
