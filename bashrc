@@ -120,4 +120,5 @@ export EDITOR=vim;
 # use vim like keybinding in terminal
 set +o vi
 
-export TERM="xterm-256color"
+#so as not to be disturbed by Ctrl-S ctrl-Q in terminals:
+stty -ixon
