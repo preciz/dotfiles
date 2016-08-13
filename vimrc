@@ -51,7 +51,7 @@ set t_ut= " improve screen clearing by using the background color
 syntax on
 let base16colorspace=256  " Access colors present in 256 colorspace
 set background=dark
-colorscheme base16-default
+colorscheme base16-default-dark
 set term=screen-256color
 let $TERM='screen-256color'
 " fix base16 matching parentheses disappearing on cursor
