@@ -207,5 +207,9 @@ noremap <Leader>gs :Gstatus<CR>
 noremap <Leader>gb :Gblame<CR>
 noremap <Leader>gd :Gvdiff<CR>
 
+"" Tests
+noremap <Leader>t :!zeus test test/*<CR>
+noremap <Leader>T :!zeus test %<CR>
+
 " Search like browsers
 set incsearch
