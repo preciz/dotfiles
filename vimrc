@@ -34,7 +34,6 @@ Plugin 'terryma/vim-expand-region'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/syntastic'
 Plugin 'chriskempson/base16-vim'
-Plugin 'elixir-lang/vim-elixir'
 Plugin 'eslint/eslint'
 Plugin 'sheerun/vim-polyglot'
 
