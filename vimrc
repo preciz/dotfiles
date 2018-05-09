@@ -14,7 +14,6 @@ Plugin 'vim-airline/vim-airline'
   let g:airline_theme='base16'
   let g:airline_powerline_fonts=1
   let g:airline_enable_branch=1
-  let g:airline_enable_syntastic=1
   let g:airline_powerline_fonts = 1
   let g:airline_left_sep = ''
   let g:airline_right_sep = ''
@@ -32,7 +31,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-rails'
 Plugin 'terryma/vim-expand-region'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'scrooloose/syntastic'
+Plugin 'w0rp/ale'
 Plugin 'chriskempson/base16-vim'
 Plugin 'eslint/eslint'
 Plugin 'sheerun/vim-polyglot'
@@ -106,14 +105,6 @@ set splitright
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_auto_loc_list = 0
-
-let g:syntastic_javascript_checkers = ['eslint']
 
 
 " Return to last edit position when opening files (You want this!)
