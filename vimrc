@@ -7,7 +7,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
-Plugin 'kien/ctrlp.vim'
+Plugin 'junegunn/fzf.vim'
 Plugin 'vim-airline/vim-airline'
   set laststatus=2               " enable airline even if no splits
   let g:airline_theme='base16'
@@ -77,18 +77,6 @@ nnoremap <Leader>q :q<CR>
 nmap <Leader><Leader> V
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
-
-" let ctrlp use git cache(faster)
-let g:ctrlp_use_caching = 0
-if executable('ag')
-set grepprg=ag\ --nogroup\ --nocolor
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-else
-  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
-  let g:ctrlp_prompt_mappings = {
-      \ 'AcceptSelection("e")': ['<space>', '<cr>', '<2-LeftMouse>'],
-      \ }
-endif
 
 " Quicker window movement
 nnoremap <C-j> <C-w>j
@@ -161,6 +149,8 @@ set lazyredraw " to avoid scrolling problems
 
 "search visually selected text
 vnoremap // y/<C-R>"<CR>
+
+noremap <C-P> :FZF<CR>
 
 " match do/end in ruby
 runtime macros/matchit.vim
