@@ -139,7 +139,7 @@ else
 endif
 
 " Syntax coloring lines that are too long just slows down the world
-set synmaxcol=128
+" set synmaxcol=128
 
 "speeding up vim by:
 set ttyfast " u got a fast terminal
