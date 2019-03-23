@@ -27,6 +27,7 @@
   st = status
   ap = add --patch
   cm = commit -m
+  ca = commit --amend
   dc = diff --cached
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 
