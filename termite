@@ -8,7 +8,7 @@ font = Monospace 14
 
 foreground      = #d8d8d8
 foreground_bold = #e8e8e8
-cursor          = #e8e8e8
+cursor          = #41AE69
 background      = #181818
 
 # 16 color space
