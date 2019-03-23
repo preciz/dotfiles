@@ -8,6 +8,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'junegunn/fzf.vim'
+Plugin 'w0rp/ale'
 Plugin 'vim-airline/vim-airline'
   set laststatus=2               " enable airline even if no splits
   let g:airline_theme='base16'
@@ -29,9 +30,7 @@ Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-surround'
 Plugin 'terryma/vim-expand-region'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'w0rp/ale'
 Plugin 'chriskempson/base16-vim'
-Plugin 'eslint/eslint'
 Plugin 'sheerun/vim-polyglot'
 
 call vundle#end()            " required
@@ -86,12 +85,6 @@ nnoremap <C-l> <C-w>l
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
 set splitright
-
-" Syntastic options
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
 
 " Return to last edit position when opening files (You want this!)
 autocmd BufReadPost *
@@ -190,3 +183,20 @@ noremap <Leader>T :!mix test %<CR>
 
 " Search like browsers
 set incsearch
+
+let g:ale_linters = {
+\  'javascript': ['eslint'],
+\  'jsx': ['eslint']
+\}
+
+let g:ale_fixers = {
+\  'javascript': ['eslint'],
+\  'jsx': ['eslint']
+\}
+
+let g:ale_sign_column_always = 1
+" let g:ale_fix_on_save = 1
+
+let g:ale_pattern_options = {
+\   '.*\.rb$': {'ale_enabled': 0},
+\}
