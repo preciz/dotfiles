@@ -8,35 +8,17 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'junegunn/fzf.vim'
-Plugin 'w0rp/ale'
-Plugin 'vim-airline/vim-airline'
-  set laststatus=2               " enable airline even if no splits
-  let g:airline_theme='base16'
-  let g:airline_powerline_fonts=1
-  let g:airline_enable_branch=1
-  let g:airline_powerline_fonts = 1
-  let g:airline_left_sep = ''
-  let g:airline_right_sep = ''
-  let g:airline_linecolumn_prefix = '␊ '
-  let g:airline_linecolumn_prefix = '␤ '
-  let g:airline_linecolumn_prefix = '¶ '
-  let g:airline_branch_prefix = '⎇ '
-  let g:airline_paste_symbol = 'ρ'
-  let g:airline_paste_symbol = 'Þ'
-  let g:airline_paste_symbol = '∥'
-  let g:airline#extensions#tabline#enabled = 0
-Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-surround'
 Plugin 'terryma/vim-expand-region'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'chriskempson/base16-vim'
+Plugin 'dylanaraps/wal.vim'
+
 Plugin 'sheerun/vim-polyglot'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-" colors
 " Force 256 colors
 set t_Co=256
 let &t_AB="\e[48;5;%dm"
@@ -45,7 +27,7 @@ set t_ut= " improve screen clearing by using the background color
 syntax on
 let base16colorspace=256  " Access colors present in 256 colorspace
 set background=dark
-colorscheme base16-default-dark
+colorscheme wal
 set term=screen-256color
 let $TERM='screen-256color'
 " fix base16 matching parentheses disappearing on cursor
@@ -183,10 +165,3 @@ noremap <Leader>T :!mix test %<CR>
 
 " Search like browsers
 set incsearch
-
-let g:ale_sign_column_always = 1
-" let g:ale_fix_on_save = 1
-
-let g:ale_pattern_options = {
-\   '.*\.rb$': {'ale_enabled': 0},
-\}
