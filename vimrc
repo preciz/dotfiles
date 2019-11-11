@@ -166,3 +166,7 @@ noremap <Leader>T :!mix test %<CR>
 
 " Search like browsers
 set incsearch
+
+" Ignore case when lowercase search
+:set ignorecase
+:set smartcase
