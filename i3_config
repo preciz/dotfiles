@@ -12,8 +12,6 @@ new_window pixel 1
 new_float normal
 
 # startup
-exec redshift -l 47.0593:16.3245
-
 exec autorandr --change default
 
 exec --no-startup-id feh --bg-fill ~/Pictures/i3_bg.jpg
