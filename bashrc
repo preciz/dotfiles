@@ -33,3 +33,7 @@ export EDITOR=vim;
 
 #so as not to be disturbed by Ctrl-S ctrl-Q in terminals:
 stty -ixon
+
+p () {
+  elixir -r /home/p/.p.exs -e "P.p(\"$1\")"
+}
