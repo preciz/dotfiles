@@ -121,6 +121,7 @@ endif
 set ttyfast " u got a fast terminal
 set ttyscroll=3
 set lazyredraw " to avoid scrolling problems
+set redrawtime=10000
 
 "search visually selected text
 vnoremap // y/<C-R>"<CR>
