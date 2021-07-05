@@ -12,7 +12,7 @@ new_window pixel 1
 new_float normal
 
 # startup
-exec autorandr --change default
+exec autorandr -l 1920
 
 exec --no-startup-id feh --bg-fill ~/Pictures/i3_bg.jpg
 
