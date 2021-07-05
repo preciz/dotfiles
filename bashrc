@@ -1,3 +1,11 @@
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+
+# Longer history
+HISTSIZE=20000
+HISTFILESIZE=20000
+
 # Add git branch if its present to PS1
 parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
@@ -34,6 +42,13 @@ export EDITOR=vim;
 #so as not to be disturbed by Ctrl-S ctrl-Q in terminals:
 stty -ixon
 
-p () {
-  elixir -r /home/p/.p.exs -e "P.p(\"$1\")"
-}
+# learn a random manual when I'm bored
+alias random_man="man \$(compgen -c | shuf -n 1)"
+
+# ssh agent
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+    ssh-agent > "$XDG_RUNTIME_DIR/ssh-agent.env"
+fi
+if [[ ! "$SSH_AUTH_SOCK" ]]; then
+    eval "$(<"$XDG_RUNTIME_DIR/ssh-agent.env")" &>/dev/null
+fi
